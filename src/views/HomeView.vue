@@ -20,7 +20,7 @@
 <script setup>
 import { reactive } from "vue";
 
-const appTitle = "My Ok Counter App";
+const appTitle = "My Amazing Counter App";
 
 //const counter = ref(0),
 // counterTitle = ref("My Counter");
