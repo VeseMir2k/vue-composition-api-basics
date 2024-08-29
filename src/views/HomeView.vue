@@ -22,7 +22,15 @@
 </template>
 
 <script setup>
-import { reactive, computed, watch } from "vue";
+import {
+  reactive,
+  computed,
+  watch,
+  onBeforeMount,
+  onBeforeUnmount,
+  onMounted,
+  onUnmounted,
+} from "vue";
 
 const appTitle = "My Amazing Counter App";
 
@@ -52,6 +60,22 @@ const increaseCounter = (amount, e) => {
 const decreaseCounter = (amount) => {
   counterData.count -= amount;
 };
+
+onBeforeMount(() => {
+  console.log("onBeforeMount");
+});
+
+onMounted(() => {
+  console.log("onMounted");
+});
+
+onBeforeUnmount(() => {
+  console.log("onBeforeUnmount");
+});
+
+onUnmounted(() => {
+  console.log("onUnmounted");
+});
 </script>
 
 <!-- 
@@ -73,10 +97,15 @@ export default {
       if (newCount == 20) alert("dsadad");
     },
   },
+  mounted() {
+    console.log("mounted");
+  },
+  unmounted() {
+    console.log("unmounted");
+  },
 };
 </script>
- -->
-
+-->
 <style>
 .home {
   text-align: center;
