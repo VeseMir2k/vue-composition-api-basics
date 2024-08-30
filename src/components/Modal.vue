@@ -1,14 +1,35 @@
 <template>
   <teleport to=".modals-container">
     <div class="modal">
-      <h1><slot name="title" /></h1>
+      <h1>{{ title }}</h1>
       <slot />
       <button>Hide modal</button>
     </div>
   </teleport>
 </template>
 
-<script setup></script>
+<script setup>
+// & props
+const props = defineProps({
+  title: {
+    type: String,
+    default: "No title specified",
+  },
+});
+</script>
+
+<!--
+<script>
+export default {
+  props: {
+    title: {
+      type: String,
+      default: "No title specified",
+    },
+  },
+};
+</script>
+-->
 
 <style scoped>
 .modal {
