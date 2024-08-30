@@ -5,70 +5,94 @@
     <h3>{{ counterData.title }}</h3>
 
     <div>
-      <button @click="decreaseCounter(2)" class="btn">--</button>
-      <button @click="decreaseCounter(1)" class="btn">-</button>
+      <button
+        @click="decreaseCounter(2)"
+        class="btn"
+      >
+        --
+      </button>
+      <button
+        @click="decreaseCounter(1)"
+        class="btn"
+      >
+        -
+      </button>
       <span class="counter">{{ counterData.count }}</span>
-      <button @click="increaseCounter(1, $event)" class="btn">+</button>
-      <button @click="increaseCounter(2)" class="btn">++</button>
+      <button
+        @click="increaseCounter(1, $event)"
+        class="btn"
+      >
+        +
+      </button>
+      <button
+        @click="increaseCounter(2)"
+        class="btn"
+      >
+        ++
+      </button>
     </div>
 
     <p>This counter is {{ oddOrEven }}</p>
 
     <div class="edit">
       <h4>Edit counter title:</h4>
-      <input v-model="counterData.title" type="text" v-autofocus />
+      <input
+        v-model="counterData.title"
+        type="text"
+        v-autofocus
+      />
     </div>
   </div>
 </template>
 
 <script setup>
-// ~ imports
-import { nextTick, ref, reactive, computed, watch, onMounted } from "vue";
-import { vAutofocus } from "@/directives/vAutofocus";
+  // ~ IMPORTS
+  import { nextTick, ref, reactive, computed, watch, onMounted } from 'vue';
+  import { vAutofocus } from '@/directives/vAutofocus';
 
-// ~ app title
-const appTitle = "My Amazing Counter App";
+  // ~ APP TITLE
+  const appTitle = 'My Amazing Counter App';
 
-const appTitleRef = ref(null);
+  const appTitleRef = ref(null);
 
-onMounted(() => {
-  console.log(`The app title is ${appTitleRef.value.offsetWidth}px wide!`);
-});
+  onMounted(() => {
+    console.log(`The app title is ${appTitleRef.value.offsetWidth}px wide!`);
+  });
 
-// ~ counter
-const counterData = reactive({
-  count: 0,
-  title: "My counter",
-});
+  // ~ COUNTER
+  const counterData = reactive({
+    count: 0,
+    title: 'My counter',
+  });
 
-watch(
-  () => counterData.count,
-  (newCount) => {
-    if (newCount === 20) {
-      alert("Way to go! You made it 20!!");
+  watch(
+    () => counterData.count,
+    (newCount) => {
+      if (newCount === 20) {
+        alert('Way to go! You made it 20!!');
+      }
     }
-  }
-);
+  );
 
-const oddOrEven = computed(() => {
-  if (counterData.count % 2 === 0) return "even";
-  else return "odd";
-});
+  const oddOrEven = computed(() => {
+    if (counterData.count % 2 === 0) return 'even';
+    else return 'odd';
+  });
 
-const increaseCounter = async (amount, e) => {
-  counterData.count += amount;
+  const increaseCounter = async (amount, e) => {
+    counterData.count += amount;
 
-  await nextTick();
-  console.log("do something when counter has updated in the dom");
-};
+    await nextTick();
+    console.log('do something when counter has updated in the dom');
+  };
 
-const decreaseCounter = (amount) => {
-  counterData.count -= amount;
-};
+  const decreaseCounter = (amount) => {
+    counterData.count -= amount;
+  };
 
-onMounted(() => {
-  console.log("Do stuff related to Counter");
-});
+  onMounted(() => {
+    console.log('Do stuff related to Counter');
+  });
 </script>
 
 <!-- 
@@ -109,17 +133,17 @@ export default {
 -->
 
 <style>
-.home {
-  text-align: center;
-  padding: 20px;
-}
-.btn,
-.counter {
-  font-size: 40px;
-  margin: 10px;
-}
+  .home {
+    text-align: center;
+    padding: 20px;
+  }
+  .btn,
+  .counter {
+    font-size: 40px;
+    margin: 10px;
+  }
 
-.edit {
-  margin-top: 60px;
-}
+  .edit {
+    margin-top: 60px;
+  }
 </style>
