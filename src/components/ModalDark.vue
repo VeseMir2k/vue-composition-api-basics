@@ -1,6 +1,6 @@
 <template>
   <teleport to=".modals-container">
-    <div v-if="modelValue" class="modal">
+    <div v-if="modelValue" class="modal-dark">
       <h1>{{ title }}</h1>
       <slot />
       <button @click="$emit('update:modelValue', false)">Hide modal</button>
@@ -26,9 +26,9 @@ const emit = defineEmits(["update:modelValue"]);
 </script>
 
 <style scoped>
-.modal {
-  background-color: beige;
-  color: black;
+.modal-dark {
+  background-color: #333;
+  color: white;
   padding: 30px;
   position: absolute;
   left: 0;
