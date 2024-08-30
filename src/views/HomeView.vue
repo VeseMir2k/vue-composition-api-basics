@@ -22,11 +22,11 @@
 </template>
 
 <script setup>
-// & imports
+// ~ imports
 import { nextTick, ref, reactive, computed, watch, onMounted } from "vue";
 import { vAutofocus } from "@/directives/vAutofocus";
 
-// & app title
+// ~ app title
 const appTitle = "My Amazing Counter App";
 
 const appTitleRef = ref(null);
@@ -35,7 +35,7 @@ onMounted(() => {
   console.log(`The app title is ${appTitleRef.value.offsetWidth}px wide!`);
 });
 
-// & counter
+// ~ counter
 const counterData = reactive({
   count: 0,
   title: "My counter",

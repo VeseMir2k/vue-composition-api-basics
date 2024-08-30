@@ -14,11 +14,11 @@
 </template>
 
 <script setup>
-// & imports
+// ~ imports
 import { ref } from "vue";
 import Modal from "@/components/Modal.vue";
 
-// & modals
+// ~ modals
 const showModal = ref(false);
 </script>
 

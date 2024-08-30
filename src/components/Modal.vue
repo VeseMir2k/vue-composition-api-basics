@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-// & props
+// ~ props
 const props = defineProps({
   title: {
     type: String,

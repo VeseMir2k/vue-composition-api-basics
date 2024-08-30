@@ -13,11 +13,11 @@
 </template>
 
 <script setup>
-// & imports
+// ~ imports
 import { ref } from "vue";
 import { vAutofocus } from "@/directives/vAutofocus";
 
-// & posts
+// ~ posts
 const posts = ref([
   {
     id: "id1",
