@@ -6,18 +6,19 @@
     <RouterLink to="/posts">Posts</RouterLink>
   </nav>
 
-  <RouterView :userData="userData" />
+  <RouterView />
 </template>
 
 <script setup>
-  import { reactive } from 'vue';
+  import { reactive, provide } from 'vue';
 
   // ~ USER DATA
-
   const userData = reactive({
     name: 'Danny',
     username: 'dannyconell',
   });
+
+  provide('userData', userData);
 </script>
 
 <style>
