@@ -1,5 +1,10 @@
 <template>
-  <div class="user-data">{{ userData.name }} @{{ userData.username }}</div>
+  <div class="user-data">
+    {{ userData.name }} @{{ userData.username }} | Network Status:
+    <span :style="{ color: online ? 'green' : 'red' }">{{
+      online ? 'Online' : 'Offline'
+    }}</span>
+  </div>
   <nav>
     <RouterLink to="/">Home</RouterLink>
     <RouterLink to="/modals">Modals</RouterLink>
@@ -11,6 +16,7 @@
 
 <script setup>
   import { reactive, provide } from 'vue';
+  import { useOnline } from '@vueuse/core';
 
   // ~ USER DATA
   const userData = reactive({
@@ -19,6 +25,9 @@
   });
 
   provide('userData', userData);
+
+  // ~ ONLINE STATUS
+  const online = useOnline();
 </script>
 
 <style>
