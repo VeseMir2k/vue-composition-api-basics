@@ -3,7 +3,8 @@
     {{ userData.name }} @{{ userData.username }} | Network Status:
     <span :style="{ color: online ? 'green' : 'red' }">{{
       online ? 'Online' : 'Offline'
-    }}</span>
+    }}</span
+    >=
   </div>
   <nav>
     <RouterLink to="/">Home</RouterLink>
