@@ -47,7 +47,9 @@
 
 <script setup>
   // ~ IMPORTS
-  import { nextTick, ref, reactive, computed, watch, onMounted } from 'vue';
+  import { ref, onMounted } from 'vue';
+
+  import { useCounter } from '@/use/useCounter';
   import { vAutofocus } from '@/directives/vAutofocus';
 
   // ~ APP TITLE
@@ -60,6 +62,8 @@
   });
 
   // ~ COUNTER
+  const { counterData, oddOrEven, increaseCounter, decreaseCounter } =
+    useCounter();
 </script>
 
 <!-- 
